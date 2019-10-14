@@ -1,1 +1,4 @@
-mode_modules/
+node_modules/
+.idea/
+
+sketch-kit/js/node_modules/

@@ -1,0 +1,14 @@
+@import "menu";
+@import "sketches/*.scss";
+
+body {
+  overscroll-behavior-y: none;
+  height: 100%;
+  margin:0;
+  padding:0;
+}
+
+.expander {
+  width: 1px;
+  height: 200vh;
+}

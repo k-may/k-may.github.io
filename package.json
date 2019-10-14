@@ -4,7 +4,8 @@
   "description": "Sketches and doodles",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "lite-server"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/k-may/k-may.github.io/issues"
   },
-  "homepage": "https://github.com/k-may/k-may.github.io#readme"
+  "homepage": "https://github.com/k-may/k-may.github.io#readme",
+  "devDependencies": {
+    "lite-server": "^2.5.4"
+  },
+  "dependencies": {
+    "magicleap-helio-webxr-polyfill": "^1.0.4",
+    "three": "^0.108.0"
+  }
 }
