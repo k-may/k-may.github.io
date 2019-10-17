@@ -4,13 +4,17 @@ import {GLTFLoader} from '../../../node_modules/three/examples/jsm/loaders/GLTFL
 import {OrbitControls} from '../../../node_modules/three/examples/jsm/controls/OrbitControls.js';
 import {DRACOLoader} from '../../../node_modules/three/examples/jsm/loaders/DRACOLoader.js';
 import {WEBVR} from '../../../node_modules/three/examples/jsm/vr/WebVR.js';
+import {HorizontalBlurShader} from 'three/examples/jsm/shaders/HorizontalBlurShader.js';
+import {VerticalBlurShader} from 'three/examples/jsm/shaders/VerticalBlurShader.js';
 
 export default class EnvironmentTest extends BaseSketch {
 
     constructor() {
         super('EnvironmentTest');
 
-        this._createScene();
+        this._createRenderer();
+        this._createScenePass();
+        this._createScene3D();
         this._loadModels();
     }
 
@@ -18,26 +22,98 @@ export default class EnvironmentTest extends BaseSketch {
         super.draw(time);
 
         this.controls.update();
-        this.defaultCamera.lookAt( this.scene.position );
+        this.camera.lookAt( this.scene.position );
 
         if(this.cubeCamera) {
-            this.cubeCamera.rotation.copy(this.defaultCamera.rotation);
+            this.cubeCamera.rotation.copy(this.camera.rotation);
             this.renderer.render(this.sceneCube, this.cubeCamera);
         }
-``
+
+        //render 3D scene to texture
+        this.renderer.setRenderTarget(this.renderTextureA);
         this.renderer.render(this.scene, this.camera);
+
+        //render first pass
+        this.renderer.setRenderTarget(this.renderTargetB);
+        this.renderer.render(this.sceneA, this.camera);
+
+        //render last pass
+        this.renderer.setRenderTarget(null);
+        this.renderer.render(this.sceneB, this.camera);
+
     }
 
-    getHeight() {
-        return super.getHeight();
+    onResize(args) {
+        super.onResize(args);
+        this.renderTargetA.setSize(window.innerWidth, window.innerHeight);
+        this.renderTargetB.setSize(window.innerWidth, window.innerHeight);
     }
 
     //---------------------------------------------
 
-    _createScene() {
+    _createMaskScene(){
+
+        this.sceneMask = new THREE.Scene();
+    }
+
+    _createScenePass(){
+
+        this.renderTextureA = new THREE.WebGLRenderTarget(window.innnerWidth, window.innerHeight);
+        this.renderTextureB = new THREE.WebGLRenderTarget(window.innnerWidth, window.innerHeight);
+
+        var shader = HorizontalBlurShader;
+        var material = new THREE.ShaderMaterial({
+            uniforms : {
+                "tDiffuse": { value: this.renderTargetA.texture },
+                "h": { value: 1.0 / 512.0 }
+            },
+            fragmentShader : shader.fragmentShader,
+            vertexShader : shader.vertexShader
+        });
+        this.sceneA = new THREE.Scene();
+        var quad = new THREE.Mesh(new THREE.PlaneBufferGeometry(2, 2), material);
+        quad.frustumCulled = false;
+        this.sceneA.add(quad);
+
+        shader = VerticalBlurShader;
+        material = new THREE.ShaderMaterial({
+            uniforms : {
+                "tDiffuse": { value: this.renderTargetB.texture },
+                "v": { value: 1.0 / 512.0 }
+            },
+            fragmentShader : shader.fragmentShader,
+            vertexShader : shader.vertexShader
+        });
+
+        this.sceneB = new THREE.Scene();
+        var quad = new THREE.Mesh(new THREE.PlaneBufferGeometry(2, 2), material);
+        quad.frustumCulled = false;
+        this.sceneB.add(quad);
+
+        this.cameraPass = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
+        this.cameraPass.position.z = 1;
+    }
+
+    _createScene3D() {
 
         var scene = new THREE.Scene();
         var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+
+        camera.position.z = 5;
+        scene.add(camera);
+
+        this.scene = scene;
+        this.camera = camera;
+
+        this.controls = new OrbitControls(this.camera, this.renderer.domElement);
+        this.controls.autoRotate = false;
+        this.controls.autoRotateSpeed = -10;
+        this.controls.screenSpacePanning = true;
+
+        window.scene = scene;
+    }
+
+    _createRenderer(){
 
         var renderer = new THREE.WebGLRenderer({antialias: true});
         renderer.setSize(window.innerWidth, window.innerHeight);
@@ -50,19 +126,6 @@ export default class EnvironmentTest extends BaseSketch {
         this.renderer.setPixelRatio(window.devicePixelRatio);
         this.renderer.toneMappingExposure = 1.0;
         this.el.appendChild(renderer.domElement);
-        camera.position.z = 5;
-        scene.add(camera);
-
-        this.scene = scene;
-
-        this.camera = camera;
-        this.defaultCamera = camera;
-        this.controls = new OrbitControls(this.defaultCamera, this.renderer.domElement);
-        this.controls.autoRotate = false;
-        this.controls.autoRotateSpeed = -10;
-        this.controls.screenSpacePanning = true;
-
-        window.scene = scene;
     }
 
     _loadModels() {
@@ -153,13 +216,13 @@ export default class EnvironmentTest extends BaseSketch {
         const light1 = new THREE.AmbientLight(0xFFFFFF, 0.3);
         light1.name = 'ambient_light';
         light1.intensity = intensity;
-        this.defaultCamera.add(light1);
+        this.camera.add(light1);
 
         const light2 = new THREE.DirectionalLight(0xFFFFFF, 0.8 * Math.PI);
         light2.position.set(0.5, 0, 0.866); // ~60º
         light2.name = 'main_light';
         light2.intensity = intensity;
-        this.defaultCamera.add(light2);
+        this.camera.add(light2);
 
         this._updateTextureEncoding();
     }

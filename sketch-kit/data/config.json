@@ -133,6 +133,17 @@
         "BlurTest_1": {
             "date": "2019-10-14T13:09:57.659Z",
             "author": "kevma"
+        },
+        "TextTest": {
+            "date": "2019-10-15T12:32:43.062Z",
+            "author": "kevma",
+            "children": [
+                "TextTest_1"
+            ]
+        },
+        "TextTest_1": {
+            "date": "2019-10-15T13:14:02.871Z",
+            "author": "kevma"
         }
     },
     "project": "tiles"
