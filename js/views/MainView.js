@@ -165,8 +165,10 @@ export class MainView extends BaseView {
                 window.innerHeight
             );
         }
-        this._expanderHeight = this._sketch.getHeight();
-        this._expanderEl.style.height = this._expanderHeight + 'px';
+        if(this._expanderEl) {
+            this._expanderHeight = this._sketch.getHeight();
+            this._expanderEl.style.height = this._expanderHeight + 'px';
+        }
     }
 
     _onScroll() {

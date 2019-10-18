@@ -10,8 +10,8 @@ export default class BlurTest_1 extends BaseSketch {
         super('BlurTest_1');
 
         this._createRenderer();
-        this._createRenderTextureScene();
-        this._createScene();
+        this._createPasses();
+        this._create3DScene();
 
         this.controls = new OrbitControls(this.rTCamera, this.renderer.domElement);
         this.controls.autoRotate = false;
@@ -26,68 +26,72 @@ export default class BlurTest_1 extends BaseSketch {
 
         this.controls.update();
 
-        this.renderer.setRenderTarget(this.renderTargetH);
-
+        //render 3D scene to texture
+        this.renderer.setRenderTarget(this.renderTargetA);
         this.renderer.render(this.rTScene, this.rTCamera);
 
-        this.renderer.setRenderTarget(this.renderTargetV);
+        //render first pass
+        this.renderer.setRenderTarget(this.renderTargetB);
+        this.renderer.render(this.sceneA, this.camera);
 
-        this.renderer.render(this.sceneH, this.camera);
+        //render last pass
         this.renderer.setRenderTarget(null);
-       /* this.scene.remove(this.meshH);
-        this.scene.add(this.meshV);*/
 
-        this.renderer.render(this.sceneV, this.camera);
+
+        this.renderer.render(this.sceneB, this.camera);
     }
 
     onResize(args) {
-        super.onResize(args)
+        super.onResize(args);
+
+        this.renderTargetA.setSize(window.innerWidth, window.innerHeight);
+        this.renderTargetB.setSize(window.innerWidth, window.innerHeight);
+
     }
 
-    _createScene(){
+    _createPasses(){
 
-        var plane = new THREE.PlaneBufferGeometry(1,1,2,2);
+        this.renderTargetA = new THREE.WebGLRenderTarget(window.innerWidth, window.innerHeight);
+        this.renderTargetB = new THREE.WebGLRenderTarget(window.innerWidth, window.innerHeight);
 
         var shader = HorizontalBlurShader;
         var material = new THREE.ShaderMaterial({
             uniforms : {
-                "tDiffuse": { value: this.renderTargetH.texture },
+                "tDiffuse": { value: this.renderTargetA.texture },
                 "h": { value: 1.0 / 512.0 }
             },
             fragmentShader : shader.fragmentShader,
             vertexShader : shader.vertexShader
         });
-        this.meshH = new THREE.Mesh(plane, material);
+        this.sceneA = new THREE.Scene();
+        var quad = new THREE.Mesh(new THREE.PlaneBufferGeometry(2, 2), material);
+        quad.frustumCulled = false;
+        this.sceneA.add(quad);
 
         shader = VerticalBlurShader;
         material = new THREE.ShaderMaterial({
             uniforms : {
-                "tDiffuse": { value: this.renderTargetV.texture },
-                "h": { value: 1.0 / 512.0 }
+                "tDiffuse": { value: this.renderTargetB.texture },
+                "v": { value: 1.0 / 512.0 }
             },
             fragmentShader : shader.fragmentShader,
             vertexShader : shader.vertexShader
         });
-        this.meshV = new THREE.Mesh(plane, material);
 
-        this.camera = new THREE.Camera();//PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        this.sceneB = new THREE.Scene();
+        var quad = new THREE.Mesh(new THREE.PlaneBufferGeometry(2, 2), material);
+        quad.frustumCulled = false;
+        this.sceneB.add(quad);
+
+        this.camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
         this.camera.position.z = 1;
 
-        this.sceneH = new THREE.Scene();
-        this.sceneH.background = new THREE.Color( 0x444444 );
-        this.sceneH.add(this.meshH);
-
-        this.sceneV = new THREE.Scene();
-        this.sceneV.add(this.meshV);
     }
 
-    _createRenderTextureScene() {
+    _create3DScene() {
 
         this.rTScene = new THREE.Scene();
         this.rTScene.background = new THREE.Color( 0x444444 );
-
-        this.renderTargetH = new THREE.WebGLRenderTarget(window.innerWidth, window.innerHeight);
-        this.renderTargetV = new THREE.WebGLRenderTarget(window.innerWidth, window.innerHeight);
 
         const material = new THREE.MeshBasicMaterial({color:0xff0000});
 

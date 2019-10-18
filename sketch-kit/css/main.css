@@ -33,6 +33,10 @@
   .menu:hover li {
     display: block; }
 
+.BlurTest_1 canvas {
+  display: block;
+  position: fixed; }
+
 .BlurTest canvas {
   display: block;
   position: fixed; }
@@ -77,6 +81,14 @@
   display: block;
   position: fixed; }
 
+.TextTest_1 canvas {
+  display: block;
+  position: fixed; }
+
+.TextTest canvas {
+  display: block;
+  position: fixed; }
+
 .TileTest_1_1 canvas {
   display: block;
   position: fixed; }
@@ -94,6 +106,10 @@
   position: fixed; }
 
 .TileTest_2 canvas {
+  display: block;
+  position: fixed; }
+
+.TileTest_3 canvas {
   display: block;
   position: fixed; }
 
