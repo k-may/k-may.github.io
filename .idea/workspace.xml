@@ -2,29 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="528f2aa4-ab3b-489b-964a-108007720a18" name="Default Changelist" comment="Merge branch 'develop' of https://github.com/k-may/k-may.github.io into develop&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <change afterPath="$PROJECT_DIR$/sketch-kit/assets/IMG_MDA102589_1600px.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sketch-kit/assets/text.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sketch-kit/assets/text.gltf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sketch-kit/assets/text_image.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sketch-kit/assets/text_image.gltf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sketch-kit/js/views/sketches/TextTest/TextTest.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sketch-kit/js/views/sketches/TextTest_1/TextTest_1.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sketch-kit/js/views/sketches/TileTest_2/TileTest_2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sketch-kit/js/views/sketches/TileTest_3/TileTest_3.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sketch-kit/scss/sketches/_TextTest.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sketch-kit/scss/sketches/_TextTest_1.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sketch-kit/scss/sketches/_TileTest_3.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/k-may.github.io.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/k-may.github.io.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/tiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/assets/tiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/tiles.gltf" beforeDir="false" afterPath="$PROJECT_DIR$/assets/tiles.gltf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/views/MainView.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/views/MainView.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/views/sketches/EnvironmentTest/EnvironmentTest.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/views/sketches/EnvironmentTest/EnvironmentTest.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sketch-kit/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/sketch-kit/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sketch-kit/data/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/sketch-kit/data/config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sketch-kit/js/views/sketches/BlurTest_1/BlurTest_1.js" beforeDir="false" afterPath="$PROJECT_DIR$/sketch-kit/js/views/sketches/BlurTest_1/BlurTest_1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sketch-kit/js/views/sketches/EnvironmentTest_4/EnvironmentTest_4.js" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -36,14 +17,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.65144354">
+    <splitter split-orientation="horizontal" split-proportion="0.49658793">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/views/sketches/EnvironmentTest/EnvironmentTest.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="323">
-                  <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
+                <state relative-caret-position="217">
+                  <caret line="351" column="29" selection-start-line="351" selection-start-column="29" selection-end-line="351" selection-end-column="29" />
                   <folding>
                     <element signature="e#0#47#0" expanded="true" />
                   </folding>
@@ -107,17 +88,6 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/sketch-kit/js/views/sketches/EnvironmentTest_3_1/EnvironmentTest_3_1.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-3094">
-                  <folding>
-                    <element signature="e#0#47#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/sketch-kit/js/views/sketches/EnvironmentTest_3/EnvironmentTest_3.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="663">
@@ -133,7 +103,35 @@
       </split-first>
       <split-second>
         <leaf>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/sketch-kit/js/node_modules/three/examples/jsm/shaders/BokehShader2.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="559">
+                  <caret line="372" column="37" selection-start-line="372" selection-start-column="37" selection-end-line="372" selection-end-column="37" />
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/js/shaders/BokehShader3.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-1143">
+                  <caret line="207" column="37" selection-start-line="207" selection-start-column="31" selection-end-line="207" selection-end-column="37" />
+                  <folding>
+                    <element signature="e#312#370#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/sketch-kit/js/node_modules/three/examples/jsm/shaders/BokehShader.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-607" />
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/sketch-kit/js/views/sketches/TextTest_1/TextTest_1.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="715">
@@ -175,8 +173,12 @@
       <find>_setupScroll</find>
       <find>start</find>
       <find>stenci</find>
-      <find>camera</find>
       <find>resize</find>
+      <find>onRes</find>
+      <find>tDepth</find>
+      <find>camera</find>
+      <find>_layoutText</find>
+      <find>sceneMask</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -202,6 +204,7 @@
         <option value="$PROJECT_DIR$/js/views/MainView.js" />
         <option value="$PROJECT_DIR$/js/node_modules/three/examples/jsm/shaders/HorizontalBlurShader.js" />
         <option value="$PROJECT_DIR$/js/node_modules/three/examples/jsm/shaders/VerticalBlurShader.js" />
+        <option value="$PROJECT_DIR$/js/shaders/BokehShader3.js" />
         <option value="$PROJECT_DIR$/js/views/sketches/EnvironmentTest/EnvironmentTest.js" />
       </list>
     </option>
@@ -348,33 +351,6 @@
               <item name="sketches" type="462c0819:PsiDirectoryNode" />
               <item name="BlurTest_1" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="k-may.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="k-may.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="sketch-kit" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="sketches" type="462c0819:PsiDirectoryNode" />
-              <item name="EnvironmentTest_3" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="k-may.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="k-may.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="sketch-kit" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="sketches" type="462c0819:PsiDirectoryNode" />
-              <item name="EnvironmentTest_3_1" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="k-may.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="k-may.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="sketch-kit" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="sketches" type="462c0819:PsiDirectoryNode" />
-              <item name="TextTest_1" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -387,7 +363,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/environment" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/js/shaders" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -397,11 +373,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\work\kevmayo\k-may.github.io\js\shaders" />
       <recent name="D:\work\kevmayo\k-may.github.io\assets\environment" />
       <recent name="D:\work\kevmayo\k-may.github.io" />
       <recent name="D:\work\kevmayo\k-may.github.io\sketch-kit\js" />
       <recent name="D:\work\kevmayo\k-may.github.io\sketch-kit\scss" />
-      <recent name="D:\work\kevmayo\k-may.github.io\sketch-kit\assets" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -457,17 +433,37 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36815000" />
+    <option name="totallyTimeSpent" value="48731000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24940899" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="npm" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3294686" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32969603" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3998441" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.27279812" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="TypeScript" order="11" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+    <layout-to-restore>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24940899" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="TypeScript" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3294686" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32969603" />
@@ -479,10 +475,11 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.27279812" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="TypeScript" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout>
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -693,9 +690,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sketch-kit/js/views/sketches/EnvironmentTest_4/EnvironmentTest_4.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/sketch-kit/js/views/sketches/EnvironmentTest_4/EnvironmentTest_4.js" />
     <entry file="file://$PROJECT_DIR$/sketch-kit/js/views/sketches/EnvironmentTest_3_1/EnvironmentTest_3_1.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3094">
@@ -756,10 +751,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/sketch-kit/js/node_modules/three/examples/jsm/shaders/BokehShader2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="559">
+          <caret line="372" column="37" selection-start-line="372" selection-start-column="37" selection-end-line="372" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sketch-kit/js/node_modules/three/examples/jsm/shaders/BokehShader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-607" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/shaders/BokehShader3.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1143">
+          <caret line="207" column="37" selection-start-line="207" selection-start-column="31" selection-end-line="207" selection-end-column="37" />
+          <folding>
+            <element signature="e#312#370#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/views/sketches/EnvironmentTest/EnvironmentTest.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
+        <state relative-caret-position="217">
+          <caret line="351" column="29" selection-start-line="351" selection-start-column="29" selection-end-line="351" selection-end-column="29" />
           <folding>
             <element signature="e#0#47#0" expanded="true" />
           </folding>

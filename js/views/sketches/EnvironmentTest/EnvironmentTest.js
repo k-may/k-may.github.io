@@ -6,7 +6,7 @@ import {DRACOLoader} from '../../../node_modules/three/examples/jsm/loaders/DRAC
 import {WEBVR} from '../../../node_modules/three/examples/jsm/vr/WebVR.js';
 import {HorizontalBlurShader} from '../../../node_modules/three/examples/jsm/shaders/HorizontalBlurShader.js';
 import {VerticalBlurShader} from '../../../node_modules/three/examples/jsm/shaders/VerticalBlurShader.js';
-import {BokehShader} from '../../../node_modules/three/examples/jsm/shaders/BokehShader2.js';
+import {BokehShader, BokehDepthShader} from '../../../shaders/BokehShader3.js';
 
 export default class EnvironmentTest extends BaseSketch {
 
@@ -16,8 +16,8 @@ export default class EnvironmentTest extends BaseSketch {
         this._createRenderer();
         this._createScenePass();
         this._createScene3D();
+        this._createDOFScene();
         this._createMaskScene();
-        //this._createDepthOfFieldScene();
         this._loadModels();
     }
 
@@ -28,14 +28,27 @@ export default class EnvironmentTest extends BaseSketch {
         // this.camera.lookAt(this.scene.position);
         // this.cameraMask.lookAt(this.scene.position);
 
-        if (this.cubeCamera) {
-            this.cubeCamera.rotation.copy(this.camera.rotation);
-            this.renderer.render(this.sceneCube, this.cubeCamera);
-        }
+         if (this.cubeCamera) {
+             this.cubeCamera.rotation.copy(this.camera.rotation);
+             this.renderer.render(this.sceneCube, this.cubeCamera);
+         }
+        this._renderDOF3DScene();
 
-        this._renderBlurPasses();
+        // this._renderBlurPasses();
 
-        this._renderMaskPass();
+         this._renderMaskPass();
+
+         if(this.tiles) {
+             var height = 7 * 1.6;
+             var speed = -0.001;
+             var tiles = this.tiles.tiles;
+             tiles.forEach(tile => {
+                 if (tile.position.y < -4) {
+                     tile.position.setY(tile.position.y + this.tiles.totalHeight);
+                 }
+                 tile.position.setY(tile.position.y + speed);
+             });
+         }
     }
 
     onResize(args) {
@@ -50,18 +63,44 @@ export default class EnvironmentTest extends BaseSketch {
         this.cameraMask.aspect = window.innerWidth / window.innerHeight;
         this.cameraMask.updateProjectionMatrix();
 
-        var position = new THREE.Vector3(-1.1, 0.8, -1).unproject(this.cameraMask);
+        var position = new THREE.Vector3(-0.49, 0.57, -1).unproject(this.cameraMask);
         this.meshMask.position.set(position.x, position.y, position.z);
 
+        this.materialBokeh.uniforms['textureWidth'].value = window.innerWidth;
+        this.materialBokeh.uniforms['textureHeight'].value = window.innerHeight;
+        this.materialBokeh.needsUpdate = true;
     }
 
     //=========================================
 
-    _renderBlurPasses() {
+    _renderDOF3DScene() {
+
+        this.renderer.setRenderTarget(this.rtTextureColor);
+        this.renderer.clear();
+        this.renderer.render(this.scene, this.camera);
+
+        this.scene.overrideMaterial = this.materialDepth;
+        this.renderer.setRenderTarget(this.rtTextureDepth);
+        this.renderer.clear();
+        this.renderer.render(this.scene, this.camera);
+        this.scene.overrideMaterial = null;
+
+        // this.renderer.setRenderTarget(this.renderTargetA);
+        this.renderer.setRenderTarget(null);
+        this.renderer.render(this.sceneDOF, this.cameraPass);
+
+
+    }
+
+    _render3DScene() {
+
         //render 3D scene to texture
         this.renderer.setRenderTarget(this.renderTargetA);
         this.renderer.clear();
         this.renderer.render(this.scene, this.camera);
+    }
+
+    _renderBlurPasses() {
 
         //render first pass
         this.renderer.setRenderTarget(this.renderTargetB);
@@ -106,33 +145,51 @@ export default class EnvironmentTest extends BaseSketch {
 
     //---------------------------------------------
 
-    _createDepthOfFieldScene(){
+    _createDOFScene() {
 
         this.sceneDOF = new THREE.Scene();
 
-        var pars = { minFilter: THREE.LinearFilter, magFilter: THREE.LinearFilter, format: THREE.RGBFormat };
-        //postprocessing.rtTextureDepth = new THREE.WebGLRenderTarget( window.innerWidth, window.innerHeight, pars );
-        this.rtTextureColor = new THREE.WebGLRenderTarget( window.innerWidth, window.innerHeight, pars );
+        var depthShader = BokehDepthShader;
+        this.materialDepth = new THREE.ShaderMaterial({
+            uniforms: depthShader.uniforms,
+            vertexShader: depthShader.vertexShader,
+            fragmentShader: depthShader.fragmentShader
+        });
+        this.materialDepth.uniforms['mNear'].value = this.camera.near;
+        this.materialDepth.uniforms['mFar'].value = 10;//this.camera.far;
+        this.materialDepth.uniforms['cameraPos'].value = this.camera.position;
+
+        var pars = {minFilter: THREE.LinearFilter, magFilter: THREE.LinearFilter, format: THREE.RGBFormat};
+        this.rtTextureDepth = new THREE.WebGLRenderTarget(window.innerWidth, window.innerHeight, pars);
+        this.rtTextureColor = new THREE.WebGLRenderTarget(window.innerWidth, window.innerHeight, pars);
         var bokeh_shader = BokehShader;
 
-        var bokeh_uniforms = THREE.UniformsUtils.clone( bokeh_shader.uniforms );
-        bokeh_uniforms[ 'tColor' ].value = postprocessing.rtTextureColor.texture;
-        bokeh_uniforms[ 'tDepth' ].value = postprocessing.rtTextureDepth.texture;
-        bokeh_uniforms[ 'textureWidth' ].value = window.innerWidth;
-        bokeh_uniforms[ 'textureHeight' ].value = window.innerHeight;
-        var materialBokeh = new THREE.ShaderMaterial( {
-            uniforms: postprocessing.bokeh_uniforms,
+        var shaderSettings = {
+            rings: 8,
+            samples: 4
+        };
+
+        var bokeh_uniforms = THREE.UniformsUtils.clone(bokeh_shader.uniforms);
+        bokeh_uniforms['tColor'].value = this.rtTextureColor.texture;
+        bokeh_uniforms['tDepth'].value = this.rtTextureDepth.texture;
+        bokeh_uniforms['textureWidth'].value = window.innerWidth;
+        bokeh_uniforms['textureHeight'].value = window.innerHeight;
+        //bokeh_uniforms['showFocus'].value = 1;
+        bokeh_uniforms['vignetting'].value = 1;
+        this.materialBokeh = new THREE.ShaderMaterial({
+            uniforms: bokeh_uniforms,
             vertexShader: bokeh_shader.vertexShader,
             fragmentShader: bokeh_shader.fragmentShader,
             defines: {
                 RINGS: shaderSettings.rings,
                 SAMPLES: shaderSettings.samples
             }
-        } );
+        });
 
-        var quad = new THREE.Mesh(new THREE.PlaneBufferGeometry(2, 2), material);
+        var quad = new THREE.Mesh(new THREE.PlaneBufferGeometry(2, 2), this.materialBokeh);
+        var quad = new THREE.Mesh(new THREE.PlaneBufferGeometry(2, 2), this.materialBokeh);
         quad.frustumCulled = false;
-        this.sceneDOF.add( quad );
+        this.sceneDOF.add(quad);
 
     }
 
@@ -146,7 +203,7 @@ export default class EnvironmentTest extends BaseSketch {
         this.sceneOrig = new THREE.Scene();
 
         var material = new THREE.MeshBasicMaterial();
-        material.map = this.renderTargetA.texture;
+        material.map = this.rtTextureColor.texture;
         material.stencilWrite = true;
         var quad = new THREE.Mesh(new THREE.PlaneBufferGeometry(2, 2), material);
 
@@ -202,22 +259,22 @@ export default class EnvironmentTest extends BaseSketch {
 
         var scene = new THREE.Scene();
         var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        camera.position.z = 5;
+        camera.position.z =2;
         scene.add(camera);
 
         this.scene = scene;
         this.camera = camera;
 
         this.controls = new OrbitControls(this.camera, this.renderer.domElement);
-        this.controls.autoRotate = false;
+        this.controls.autoRotate = true;
         this.controls.autoRotateSpeed = -10;
         this.controls.screenSpacePanning = true;
         this.controls.enableDamping = true;
         this.controls.dampingFactor = 0.9;
-        this.controls.maxAzimuthAngle = 1.4;
-        this.controls.minAzimuthAngle = -1.4;
-        this.controls.maxPolarAngle = 1.91;
-        this.controls.minPolarAngle = 0.2833;
+        this.controls.maxAzimuthAngle = 0.2;
+        this.controls.minAzimuthAngle = -0.2;
+        this.controls.maxPolarAngle = 1.6;
+        this.controls.minPolarAngle = 1.2;
 
         window.scene = scene;
     }
@@ -274,7 +331,6 @@ export default class EnvironmentTest extends BaseSketch {
         quaternion.setFromAxisAngle(new THREE.Vector3(1, 0, 0), Math.PI / 2);
         text.setRotationFromQuaternion(quaternion);
 
-        console.log(text.position);
         var material = new THREE.MeshBasicMaterial({
             color: 0x00ff00,
             colorWrite: false,
@@ -291,6 +347,7 @@ export default class EnvironmentTest extends BaseSketch {
         material.transparent = true;
         material.depthTest = false;
         material.depthWrite = false;
+        
         var scale = 0.06;
         mesh.scale.set(scale, scale, scale);
         this.sceneMask.add(mesh);
@@ -301,20 +358,28 @@ export default class EnvironmentTest extends BaseSketch {
     _layoutTiles(tiles, materials) {
 
         var numTiles = 100;
-
-        var sizeRow = 7;
+        var tileHeight = 1.6;
+        var tileWidth = 1.8;
+        //size should be even
+        var sizeRow = 8;
 
         var angles = [];
         for (var i = 0; i < 6; i++) {
             angles.push(((Math.PI * 2) / 6) * i);
         }
         var x, y, z;
+        this.tiles = {
+            tiles : [],
+            totalHeight : 0
+        };
+
         //create tiled wall
         for (var i = 0; i < numTiles; i++) {
 
             var tile = tiles[Math.floor(Math.random() * tiles.length)];
             tile = tile.clone();
             this.scene.add(tile);
+            this.tiles.tiles.push(tile);
 
             var quaternion = new THREE.Quaternion();
             quaternion.setFromAxisAngle(new THREE.Vector3(1, 0, 0), Math.PI / 2);
@@ -335,12 +400,13 @@ export default class EnvironmentTest extends BaseSketch {
             quaternion.multiply(newRot);
 
             z = 0;
-            tile.position.x = x - (numTiles / sizeRow) / 2;
+            tile.position.x = x - ((numTiles / sizeRow) / 2) * 1.8;
             tile.position.y = y;
             tile.position.z = z;
             tile.setRotationFromQuaternion(quaternion);
         }
 
+        this.tiles.totalHeight = sizeRow * tileHeight;
     }
 
     _addLights() {
@@ -351,7 +417,7 @@ export default class EnvironmentTest extends BaseSketch {
 
         const hemiLight = new THREE.HemisphereLight(skyColor, groundColor, intensity);
         hemiLight.name = 'hemi_light';
-        // this.scene.add(hemiLight);
+        this.scene.add(hemiLight);
 
         const light1 = new THREE.AmbientLight(0xFFFFFF, 0.3);
         light1.name = 'ambient_light';
