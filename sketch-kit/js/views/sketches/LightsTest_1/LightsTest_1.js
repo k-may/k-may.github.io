@@ -126,6 +126,7 @@ export default class LightsTest_1 extends BaseSketch {
 
         var geometry = new THREE.PlaneBufferGeometry( 2000, 2000 );
 
+
         var mesh = new THREE.Mesh( geometry, material );
         mesh.position.set( 0, - 1, 0 );
         mesh.rotation.x = - Math.PI * 0.5;

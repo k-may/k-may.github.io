@@ -24,8 +24,8 @@ export default class EnvironmentTest extends BaseSketch {
     draw(time) {
         super.draw(time);
 
-        //this.controls.update();
-        // this.camera.lookAt(this.scene.position);
+        this.controls.update();
+        this.camera.lookAt(this.scene.position);
         // this.cameraMask.lookAt(this.scene.position);
 
          if (this.cubeCamera) {
@@ -49,6 +49,16 @@ export default class EnvironmentTest extends BaseSketch {
                  tile.position.setY(tile.position.y + speed);
              });
          }
+
+            
+         if(this.lightHelper){
+             this.spotLight.position.setZ(10);
+                this.spotLight.angle = 0.8;
+                this.spotLight.shadow.camera.far = 2000;
+                this.spotLight.distance = 200;
+             this.spotLight.position.setY(1);
+            this.lightHelper.update();
+         }
     }
 
     onResize(args) {
@@ -63,7 +73,8 @@ export default class EnvironmentTest extends BaseSketch {
         this.cameraMask.aspect = window.innerWidth / window.innerHeight;
         this.cameraMask.updateProjectionMatrix();
 
-        var position = new THREE.Vector3(-0.49, 0.57, -1).unproject(this.cameraMask);
+        var pos = 100 / window.innerWidth - 0.5;
+        var position = new THREE.Vector3(pos, 0.57, -1).unproject(this.cameraMask);
         this.meshMask.position.set(position.x, position.y, position.z);
 
         this.materialBokeh.uniforms['textureWidth'].value = window.innerWidth;
@@ -266,15 +277,14 @@ export default class EnvironmentTest extends BaseSketch {
         this.camera = camera;
 
         this.controls = new OrbitControls(this.camera, this.renderer.domElement);
-        this.controls.autoRotate = true;
-        this.controls.autoRotateSpeed = -10;
+        this.controls.autoRotate = false;
         this.controls.screenSpacePanning = true;
         this.controls.enableDamping = true;
         this.controls.dampingFactor = 0.9;
-        this.controls.maxAzimuthAngle = 0.2;
+/*        this.controls.maxAzimuthAngle = 0.2;
         this.controls.minAzimuthAngle = -0.2;
         this.controls.maxPolarAngle = 1.6;
-        this.controls.minPolarAngle = 1.2;
+        this.controls.minPolarAngle = 1.2;*/
 
         window.scene = scene;
     }
@@ -289,6 +299,8 @@ export default class EnvironmentTest extends BaseSketch {
          this.renderer.gammaOutput = true;
          this.renderer.gammaFactor = 2.2;*/
         this.renderer.autoClear = false;
+        this.renderer.shadowMap.enabled = true;
+        this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
         //this.renderer.setClearColor(0xcccccc);
         this.renderer.setPixelRatio(window.devicePixelRatio);
         this.renderer.toneMappingExposure = 1.0;
@@ -413,7 +425,7 @@ export default class EnvironmentTest extends BaseSketch {
 
         const skyColor = 0xB1E1FF;  // light blue
         const groundColor = 0xB97A20;  // brownish orange
-        const intensity = 1;
+        const intensity = 0.4;
 
         const hemiLight = new THREE.HemisphereLight(skyColor, groundColor, intensity);
         hemiLight.name = 'hemi_light';
@@ -430,6 +442,34 @@ export default class EnvironmentTest extends BaseSketch {
         light2.intensity = intensity;
         this.camera.add(light2);
 
+        var spotLight = new THREE.SpotLight( 0xffffff, 1 );
+        spotLight.position.set( 0, 10, 3 );
+        spotLight.angle = 0.2;
+        spotLight.penumbra = 0.05;
+        spotLight.decay = 2;
+        spotLight.intensity = 1;
+        spotLight.distance = 100;
+        spotLight.castShadow = true;
+        spotLight.shadow.mapSize.width = 1024;
+        spotLight.shadow.mapSize.height = 1024;
+        spotLight.shadow.camera.near = 10;
+        spotLight.shadow.camera.far = 200;
+        
+        this.spotLight = spotLight;
+
+        this.lightHelper = new THREE.SpotLightHelper( spotLight );
+        this.scene.add( this.lightHelper );
+
+        this.scene.traverse( function( child ) {
+
+            if ( child.isMesh ) {
+
+                child.castShadow = true;
+                child.receiveShadow = true;
+
+            }
+
+        } );
         this._updateTextureEncoding();
     }
 
