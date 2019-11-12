@@ -385,13 +385,15 @@ export default class EnvironmentTest extends BaseSketch {
             totalHeight : 0
         };
 
+        var mergedGeometry = new THREE.Geometry();
+        var tile;
         //create tiled wall
         for (var i = 0; i < numTiles; i++) {
 
-            var tile = tiles[Math.floor(Math.random() * tiles.length)];
+            tile = tiles[Math.floor(Math.random() * tiles.length)];
             tile = tile.clone();
-            this.scene.add(tile);
-            this.tiles.tiles.push(tile);
+            //this.scene.add(tile);
+            //this.tiles.tiles.push(tile);
 
             var quaternion = new THREE.Quaternion();
             quaternion.setFromAxisAngle(new THREE.Vector3(1, 0, 0), Math.PI / 2);
@@ -416,7 +418,13 @@ export default class EnvironmentTest extends BaseSketch {
             tile.position.y = y;
             tile.position.z = z;
             tile.setRotationFromQuaternion(quaternion);
+            tile.updateMatrix();
+            var tileGeometry = new THREE.Geometry().fromBufferGeometry(tile.geometry);
+            mergedGeometry.merge(tileGeometry, tile.matrix);
         }
+
+        var mesh = new THREE.Mesh(mergedGeometry, tile.material);
+        this.scene.add(mesh);
 
         this.tiles.totalHeight = sizeRow * tileHeight;
     }
