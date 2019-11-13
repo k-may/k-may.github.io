@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="528f2aa4-ab3b-489b-964a-108007720a18" name="Default Changelist" comment="Merge branch 'develop' of https://github.com/k-may/k-may.github.io into develop&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <change beforePath="$PROJECT_DIR$/.idea/k-may.github.io.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/k-may.github.io.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/views/sketches/EnvironmentTest/EnvironmentTest.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/views/sketches/EnvironmentTest/EnvironmentTest.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sketch-kit/data/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/sketch-kit/data/config.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,25 +23,14 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>_expanderEl</find>
-      <find>_setupScroll</find>
-      <find>start</find>
-      <find>stenci</find>
-      <find>resize</find>
-      <find>onRes</find>
-      <find>camera</find>
-      <find>_layoutText</find>
-      <find>tDepth</find>
-      <find>shadow</find>
-      <find>sceneMask</find>
-      <find>_directionLight</find>
-      <find>autor</find>
-    </findStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
   </component>
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
@@ -56,12 +44,12 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../sketch-kit" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../sketch-kit/index.js" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="DockerRegistry" />
+    <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
@@ -85,19 +73,19 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Node.js.index.js">
+  <component name="RunManager" selected="Node.js.run">
     <configuration default="true" type="NodeJSConfigurationType" application-parameters="create EnvironmentTest RandomTiles" path-to-js-file="$PROJECT_DIR$/../sketch-kit/sketch-kit/index.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
-    <configuration name="index.js" type="NodeJSConfigurationType" application-parameters="create EnvironmentTest RandomTiles" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/../sketch-kit/sketch-kit/index.js" working-dir="$PROJECT_DIR$">
+    <configuration name="index.js" type="NodeJSConfigurationType" application-parameters="create EnvironmentTest RandomTiles" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/../sketch-kit/index.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
-    <configuration name="wtf" type="NodeJSConfigurationType" path-to-js-file="test.js" working-dir="$PROJECT_DIR$">
+    <configuration name="run" type="NodeJSConfigurationType" application-parameters="run" path-to-js-file="$PROJECT_DIR$/../sketch-kit/index.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
     <list>
       <item itemvalue="Node.js.index.js" />
-      <item itemvalue="Node.js.wtf" />
+      <item itemvalue="Node.js.run" />
     </list>
   </component>
   <component name="SvnConfiguration">
@@ -123,7 +111,8 @@
       <workItem from="1570795914990" duration="3352000" />
       <workItem from="1571048516881" duration="12012000" />
       <workItem from="1571828011374" duration="1482000" />
-      <workItem from="1573576089456" duration="1533000" />
+      <workItem from="1573576089456" duration="4318000" />
+      <workItem from="1573586133677" duration="4143000" />
     </task>
     <servers />
   </component>
@@ -135,7 +124,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
