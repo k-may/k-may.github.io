@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="528f2aa4-ab3b-489b-964a-108007720a18" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/sketch-kit/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/sketch-kit/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,7 +60,7 @@
       <workItem from="1570710580678" duration="1105000" />
       <workItem from="1570783348678" duration="104000" />
       <workItem from="1570783463276" duration="198000" />
-      <workItem from="1573647061490" duration="2572000" />
+      <workItem from="1573647061490" duration="2812000" />
     </task>
     <servers />
   </component>
