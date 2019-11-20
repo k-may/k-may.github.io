@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="528f2aa4-ab3b-489b-964a-108007720a18" name="Default Changelist" comment="Merge branch 'develop' of https://github.com/k-may/k-may.github.io into develop&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <change beforePath="$PROJECT_DIR$/.idea/k-may.github.io.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/k-may.github.io.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sketch-kit/data/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/sketch-kit/data/config.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -113,6 +111,7 @@
       <workItem from="1571828011374" duration="1482000" />
       <workItem from="1573576089456" duration="4318000" />
       <workItem from="1573586133677" duration="4143000" />
+      <workItem from="1573992478273" duration="617000" />
     </task>
     <servers />
   </component>
