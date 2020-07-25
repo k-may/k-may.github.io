@@ -1,5 +1,4 @@
 export let CanvasUtils = {
-
     CreateBufferWebGL() {
         var canvas = document.createElement('canvas');
         var ctx = canvas.getContext('webgl');
@@ -9,48 +8,77 @@ export let CanvasUtils = {
             width: -1,
             height: -1,
 
-            resize: function (w, h) {
+            resize: function(w, h) {
                 if (w !== this.width || h !== this.height) {
                     this.canvas.width = this.width = w;
                     this.canvas.height = this.height = h;
                 }
-            }
+            },
         };
     },
 
-    CreateBuffer: function () {
-        var canvas = document.createElement('canvas');
-        var ctx = canvas.getContext('2d');
+    /***
+     *
+     * @param canvas : HTMLCanvasElement
+     * @param alpha : ?CanvasRenderingContext2DSettings
+     * @returns {{canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D, width: number, clear: clear, resize: resize, resizeToDisplaySize(): boolean, fill: fill, height: number}|boolean}
+     * @constructor
+     */
+    CreateBuffer: function(canvas, opts) {
+        var canvas = canvas || document.createElement('canvas');
+        var ctx = canvas.getContext('2d',opts || {alpha : true});
+
         return {
             canvas: canvas,
             ctx: ctx,
             width: -1,
             height: -1,
+            devicePixelRatio : 1,
 
-            resize: function (w, h) {
+            resizeToDisplaySize() {
+                this.devicePixelRatio = window.devicePixelRatio;
+                const width = (canvas.clientWidth * this.devicePixelRatio) | 0;
+                const height = (canvas.clientHeight * this.devicePixelRatio) | 0;
+                if (canvas.width !== width || canvas.height !== height) {
+                    canvas.width = this.width = width;
+                    canvas.height = this.height = height;
+                    return true;
+                }
+                return false;
+            },
+
+            /***
+             *
+             * @param w : Number
+             * @param h : Number
+             */
+            resize: function(w, h) {
                 if (w !== this.width || h !== this.height) {
                     this.canvas.width = this.width = w;
                     this.canvas.height = this.height = h;
                 }
             },
 
-            clear: function () {
+            clear: function() {
                 this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
             },
 
-            //for debug!
-            fill: function (color) {
+            /***
+             *
+             * @param color : String
+             */
+            fill: function(color) {
                 this.ctx.fillStyle = color;
-                this.ctx.fillRect(0, 0, this.width, this.height);
-            }
+                this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+            },
         };
     },
 
-    CreateImageData: function (w, h) {
+    CreateImageData: function(w, h) {
         return CanvasUtils.ctx.createImageData(w, h);
     },
 
-    Convolute: function (pixels, weights, opaque) {
+    Convolute: function(pixels, weights, opaque) {
         var side = Math.round(Math.sqrt(weights.length));
         var halfSide = Math.floor(side / 2);
         var src = pixels.data;
@@ -70,7 +98,10 @@ export let CanvasUtils = {
                 var dstOff = (y * w + x) * 4;
                 // calculate the weighed sum of the source image pixels that
                 // fall under the convolution matrix
-                var r = 0, g = 0, b = 0, a = 0;
+                var r = 0,
+                    g = 0,
+                    b = 0,
+                    a = 0;
                 for (var cy = 0; cy < side; cy++) {
                     for (var cx = 0; cx < side; cx++) {
                         var scy = sy + cy - halfSide;
@@ -94,9 +125,7 @@ export let CanvasUtils = {
         return output;
     },
 
-
-    GenerateTexture: function (buffer) {
-
+    GenerateTexture: function(buffer) {
         var ctx = buffer.ctx;
         var canvas = buffer.canvas;
 
@@ -104,22 +133,18 @@ export let CanvasUtils = {
         var data = imageData.data;
 
         for (var i = 0; i < data.length; i += 4) {
-
             var randomTone = Math.random() * 55 + 80;
             data[i] = randomTone;
             data[i + 1] = randomTone;
             data[i + 2] = randomTone;
             data[i + 3] = 100;
-
         }
 
         ctx.putImageData(imageData, 0, 0);
         return canvas.toDataURL();
-    }
+    },
 };
 
 //static members
 var canvas = document.createElement('canvas');
 var ctx = canvas.getContext('2d');
-
-

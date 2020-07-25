@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "lite-server",
-    "build" : "copy-node-modules ./ ./js",
+    "server": "lite-server",
+    "sass" : "node tools/sass",
+    "dev": "concurrently --kill-others \"npm run server\" \"npm run sass\"",
+    "build": "copy-node-modules ./ ./js",
     "postinstall": "npm run build"
   },
   "repository": {
@@ -20,8 +22,12 @@
   },
   "homepage": "https://github.com/k-may/k-may.github.io#readme",
   "devDependencies": {
+    "concurrently": "^5.2.0",
     "copy-node-modules": "^1.1.1",
-    "lite-server": "^2.5.4"
+    "fs": "0.0.1-security",
+    "lite-server": "^2.5.4",
+    "node-sass": "^4.14.1",
+    "path": "^0.12.7"
   },
   "dependencies": {
     "magicleap-helio-webxr-polyfill": "^1.0.4",

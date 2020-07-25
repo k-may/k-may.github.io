@@ -1,8 +1,7 @@
 import {MainView} from "./views/MainView.js";
 
-var mainView = new MainView(document.getElementsByClassName('js-region-main')[0]);
-mainView.start();
-document.body.appendChild(mainView.el);
+var mainView = new MainView(document.querySelector('section'));
+mainView.initialize();
 
 function draw() {
     window.requestAnimationFrame(draw);

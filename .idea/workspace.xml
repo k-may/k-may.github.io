@@ -3,15 +3,20 @@
   <component name="ChangeListManager">
     <list default="true" id="528f2aa4-ab3b-489b-964a-108007720a18" name="Default Changelist" comment="Merge branch 'develop' of https://github.com/k-may/k-may.github.io into develop&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/utils/CanvasUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/utils/CanvasUtils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/utils/LoadingUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/utils/LoadingUtils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/utils/TransformUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/utils/TransformUtils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/views/MainView.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/views/MainView.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FavoritesManager">
-    <favorites_list name="k-may.github.io" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -37,12 +42,16 @@
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../sketch-kit/index.js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/fonts" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -52,26 +61,14 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\work\kevmayo\k-may.github.io\fonts" />
+      <recent name="C:\work\k-may.github.io\js\utils" />
       <recent name="D:\work\kevmayo\k-may.github.io\js\shaders" />
       <recent name="D:\work\kevmayo\k-may.github.io\assets\environment" />
       <recent name="D:\work\kevmayo\k-may.github.io" />
-      <recent name="D:\work\kevmayo\k-may.github.io\sketch-kit\js" />
-      <recent name="D:\work\kevmayo\k-may.github.io\sketch-kit\scss" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Node.js.run">
+  <component name="RunManager" selected="Node.js.sass">
     <configuration default="true" type="NodeJSConfigurationType" application-parameters="create EnvironmentTest RandomTiles" path-to-js-file="$PROJECT_DIR$/../sketch-kit/sketch-kit/index.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
@@ -81,9 +78,13 @@
     <configuration name="run" type="NodeJSConfigurationType" application-parameters="run" path-to-js-file="$PROJECT_DIR$/../sketch-kit/index.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
+    <configuration name="sass" type="NodeJSConfigurationType" application-parameters="create EnvironmentTest RandomTiles" path-to-js-file="$PROJECT_DIR$/tools/sass.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Node.js.index.js" />
       <item itemvalue="Node.js.run" />
+      <item itemvalue="Node.js.sass" />
     </list>
   </component>
   <component name="SvnConfiguration">
@@ -112,24 +113,109 @@
       <workItem from="1573576089456" duration="4318000" />
       <workItem from="1573586133677" duration="4143000" />
       <workItem from="1573992478273" duration="617000" />
+      <workItem from="1574272115133" duration="3040000" />
+      <workItem from="1574757668352" duration="7000" />
+      <workItem from="1595572875794" duration="2917000" />
+      <workItem from="1595675740917" duration="9553000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2146" y="14" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595684408105">
+      <screen x="1920" y="-344" width="2560" height="1400" />
+    </state>
+    <state x="2146" y="14" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.-344.2560.1400@1920.-344.2560.1400" timestamp="1595684408105" />
+    <state width="779" height="466" key="DebuggerActiveHint" timestamp="1595686552005">
+      <screen x="1920" y="-344" width="2560" height="1400" />
+    </state>
+    <state width="779" height="466" key="DebuggerActiveHint/0.0.1920.1040/1920.-344.2560.1400@1920.-344.2560.1400" timestamp="1595686552005" />
+    <state x="2472" y="114" key="FileChooserDialogImpl" timestamp="1595685714747">
+      <screen x="1920" y="-344" width="2560" height="1400" />
+    </state>
+    <state x="2472" y="114" key="FileChooserDialogImpl/0.0.1920.1040/1920.-344.2560.1400@1920.-344.2560.1400" timestamp="1595685714747" />
+    <state width="1520" height="489" key="GridCell.Tab.0.bottom" timestamp="1595691815382">
+      <screen x="1920" y="-344" width="2560" height="1400" />
+    </state>
+    <state width="1520" height="489" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.-344.2560.1400@1920.-344.2560.1400" timestamp="1595691815382" />
+    <state width="1520" height="489" key="GridCell.Tab.0.center" timestamp="1595691815382">
+      <screen x="1920" y="-344" width="2560" height="1400" />
+    </state>
+    <state width="1520" height="489" key="GridCell.Tab.0.center/0.0.1920.1040/1920.-344.2560.1400@1920.-344.2560.1400" timestamp="1595691815382" />
+    <state width="1520" height="489" key="GridCell.Tab.0.left" timestamp="1595691815382">
+      <screen x="1920" y="-344" width="2560" height="1400" />
+    </state>
+    <state width="1520" height="489" key="GridCell.Tab.0.left/0.0.1920.1040/1920.-344.2560.1400@1920.-344.2560.1400" timestamp="1595691815382" />
+    <state width="1520" height="489" key="GridCell.Tab.0.right" timestamp="1595691815382">
+      <screen x="1920" y="-344" width="2560" height="1400" />
+    </state>
+    <state width="1520" height="489" key="GridCell.Tab.0.right/0.0.1920.1040/1920.-344.2560.1400@1920.-344.2560.1400" timestamp="1595691815382" />
+    <state width="1520" height="489" key="GridCell.Tab.1.bottom" timestamp="1595691815231">
+      <screen x="1920" y="-344" width="2560" height="1400" />
+    </state>
+    <state width="1520" height="489" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.-344.2560.1400@1920.-344.2560.1400" timestamp="1595691815231" />
+    <state width="1520" height="489" key="GridCell.Tab.1.center" timestamp="1595691815231">
+      <screen x="1920" y="-344" width="2560" height="1400" />
+    </state>
+    <state width="1520" height="489" key="GridCell.Tab.1.center/0.0.1920.1040/1920.-344.2560.1400@1920.-344.2560.1400" timestamp="1595691815231" />
+    <state width="1520" height="489" key="GridCell.Tab.1.left" timestamp="1595691815231">
+      <screen x="1920" y="-344" width="2560" height="1400" />
+    </state>
+    <state width="1520" height="489" key="GridCell.Tab.1.left/0.0.1920.1040/1920.-344.2560.1400@1920.-344.2560.1400" timestamp="1595691815231" />
+    <state width="1520" height="489" key="GridCell.Tab.1.right" timestamp="1595691815231">
+      <screen x="1920" y="-344" width="2560" height="1400" />
+    </state>
+    <state width="1520" height="489" key="GridCell.Tab.1.right/0.0.1920.1040/1920.-344.2560.1400@1920.-344.2560.1400" timestamp="1595691815231" />
+    <state width="1520" height="489" key="GridCell.Tab.2.bottom" timestamp="1595691815232">
+      <screen x="1920" y="-344" width="2560" height="1400" />
+    </state>
+    <state width="1520" height="489" key="GridCell.Tab.2.bottom/0.0.1920.1040/1920.-344.2560.1400@1920.-344.2560.1400" timestamp="1595691815232" />
+    <state width="1520" height="489" key="GridCell.Tab.2.center" timestamp="1595691815231">
+      <screen x="1920" y="-344" width="2560" height="1400" />
+    </state>
+    <state width="1520" height="489" key="GridCell.Tab.2.center/0.0.1920.1040/1920.-344.2560.1400@1920.-344.2560.1400" timestamp="1595691815231" />
+    <state width="1520" height="489" key="GridCell.Tab.2.left" timestamp="1595691815231">
+      <screen x="1920" y="-344" width="2560" height="1400" />
+    </state>
+    <state width="1520" height="489" key="GridCell.Tab.2.left/0.0.1920.1040/1920.-344.2560.1400@1920.-344.2560.1400" timestamp="1595691815231" />
+    <state width="1520" height="489" key="GridCell.Tab.2.right" timestamp="1595691815231">
+      <screen x="1920" y="-344" width="2560" height="1400" />
+    </state>
+    <state width="1520" height="489" key="GridCell.Tab.2.right/0.0.1920.1040/1920.-344.2560.1400@1920.-344.2560.1400" timestamp="1595691815231" />
+    <state width="1520" height="489" key="GridCell.Tab.3.bottom" timestamp="1595691815232">
+      <screen x="1920" y="-344" width="2560" height="1400" />
+    </state>
+    <state width="1520" height="489" key="GridCell.Tab.3.bottom/0.0.1920.1040/1920.-344.2560.1400@1920.-344.2560.1400" timestamp="1595691815232" />
+    <state width="1520" height="489" key="GridCell.Tab.3.center" timestamp="1595691815232">
+      <screen x="1920" y="-344" width="2560" height="1400" />
+    </state>
+    <state width="1520" height="489" key="GridCell.Tab.3.center/0.0.1920.1040/1920.-344.2560.1400@1920.-344.2560.1400" timestamp="1595691815232" />
+    <state width="1520" height="489" key="GridCell.Tab.3.left" timestamp="1595691815232">
+      <screen x="1920" y="-344" width="2560" height="1400" />
+    </state>
+    <state width="1520" height="489" key="GridCell.Tab.3.left/0.0.1920.1040/1920.-344.2560.1400@1920.-344.2560.1400" timestamp="1595691815232" />
+    <state width="1520" height="489" key="GridCell.Tab.3.right" timestamp="1595691815232">
+      <screen x="1920" y="-344" width="2560" height="1400" />
+    </state>
+    <state width="1520" height="489" key="GridCell.Tab.3.right/0.0.1920.1040/1920.-344.2560.1400@1920.-344.2560.1400" timestamp="1595691815232" />
+    <state x="2355" y="-24" key="search.everywhere.popup" timestamp="1595685713208">
+      <screen x="1920" y="-344" width="2560" height="1400" />
+    </state>
+    <state x="2355" y="-24" key="search.everywhere.popup/0.0.1920.1040/1920.-344.2560.1400@1920.-344.2560.1400" timestamp="1595685713208" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
