@@ -1,2 +1,4 @@
 node_modules/
-!sketch-kit/js/node_modules/
+.idea/
+
+sketch-kit/js/node_modules/
