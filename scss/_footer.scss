@@ -1,0 +1,44 @@
+
+footer {
+  position: fixed;
+  bottom: 0;
+  right:0;
+
+  @include respond-to('desktop'){
+    left:0;
+  }
+
+  .icons{
+    display:flex;
+    margin-left:45px;
+    margin-top: 15px;
+    flex-direction: column;
+    @include respond-to('desktop'){
+      flex-direction: row;
+    }
+
+    .icon {
+      width: 30px;
+      height: 30px;
+      background-color: black;
+      cursor: pointer;
+      margin-right: 15px;
+      margin-bottom: 15px;
+      background-size: contain;
+    }
+
+    .vimeo{
+      background-image: url("../assets/vimeo.png");
+    }
+
+    .linked-in{
+      background-image: url("../assets/linked-in.png");
+    }
+
+    .medium{
+      background-image: url("../assets/medium.png");
+    }
+  }
+
+
+}

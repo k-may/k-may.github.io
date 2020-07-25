@@ -45,13 +45,17 @@ export class MainView extends BaseView {
     }
 
     _onResize() {
+
+        //var isMobile = document.documentElement.style.getProperty('--mobile');
+        var isMobile = getComputedStyle(document.querySelector(':root')).getPropertyValue('--mobile') == "1";
         var gridWidth = this.el.clientWidth;
         var gridHeight = this.el.clientHeight;
 
         var cellWidth = this._cell.clientWidth;
         var cellHeight = this._cell.clientHeight;
+        var dim = isMobile ? cellWidth : Math.max(cellWidth, cellHeight);
 
-        document.documentElement.style.setProperty('--font', `${cellWidth}px`);
+        document.documentElement.style.setProperty('--font', `${dim}px`);
 
         var numCols = Math.round(gridWidth / cellWidth);
         var numRows = Math.round(gridHeight / cellHeight) - 1;
