@@ -1,5 +1,12 @@
 import {BaseView} from './BaseView.js';
+import {Color, ColorUtils} from '../utils/ColorUtils.js';
+import BufferView from './BufferView.js';
+import State from './State.js';
+import SectionsView from './SectionsView.js';
 
+export const GLOBALS = {
+    Colors: []
+}
 
 export class MainView extends BaseView {
 
@@ -18,7 +25,22 @@ export class MainView extends BaseView {
 
         this._cell = this.el.querySelector('.grid_cell');
 
+        var root = document.querySelector(':root');
+
+        GLOBALS.Colors.push(ColorUtils.HexToRgb(getComputedStyle(root).getPropertyValue('--color1')));
+        GLOBALS.Colors.push(ColorUtils.HexToRgb(getComputedStyle(root).getPropertyValue('--color2')));
+        GLOBALS.Colors.push(ColorUtils.HexToRgb(getComputedStyle(root).getPropertyValue('--color3')));
+        GLOBALS.Colors.push(ColorUtils.HexToRgb(getComputedStyle(root).getPropertyValue('--color4')));
+        GLOBALS.Colors.push(ColorUtils.HexToRgb(getComputedStyle(root).getPropertyValue('--color5')));
+        GLOBALS.Colors.push(ColorUtils.HexToRgb(getComputedStyle(root).getPropertyValue('--color6')));
+        GLOBALS.Colors.push(ColorUtils.HexToRgb(getComputedStyle(root).getPropertyValue('--color7')));
+        GLOBALS.Colors.push(ColorUtils.HexToRgb(getComputedStyle(root).getPropertyValue('--color8')));
+
         this._setupWindow();
+        this._state = new State();
+        this._bufferView = new BufferView(this.el.querySelector('canvas'), this._state);
+
+        this._sectionsView = new SectionsView(this.el.querySelector('section'), this._state);
     }
 
     /***
@@ -27,6 +49,8 @@ export class MainView extends BaseView {
      */
     draw(time) {
 
+        if(this._bufferView)
+            this._bufferView.draw()
     }
 
     //---------------------------------------------------
@@ -47,7 +71,7 @@ export class MainView extends BaseView {
     _onResize() {
 
         //var isMobile = document.documentElement.style.getProperty('--mobile');
-        var isMobile = getComputedStyle(document.querySelector(':root')).getPropertyValue('--mobile').indexOf("1") !== -1;
+        var isMobile = getComputedStyle(document.querySelector(':root')).getPropertyValue('--mobile').indexOf('1') !== -1;
         var gridWidth = this.el.clientWidth;
         var gridHeight = this.el.clientHeight;
 

@@ -100,6 +100,16 @@ footer {
     footer .icons .medium {
       background-image: url("../assets/medium.png"); }
 
+:root {
+  --color1: #3A6361;
+  --color2: #E8ACC8;
+  --color3: #36588A;
+  --color4: #BC9249;
+  --color5: #83838E;
+  --color6: #7A3C45;
+  --color7: #B86455;
+  --color8: #AE867D; }
+
 /* Hide scrollbar for Chrome, Safari and Opera */
 body::-webkit-scrollbar {
   display: none; }
@@ -113,5 +123,12 @@ section {
   margin-left: 20px;
   margin-top: 20px;
   position: relative; }
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh; }
 
 /*# sourceMappingURL=main.css.map */

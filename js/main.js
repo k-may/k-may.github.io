@@ -1,6 +1,6 @@
 import {MainView} from "./views/MainView.js";
 
-var mainView = new MainView(document.querySelector('section'));
+var mainView = new MainView(document.querySelector('body'));
 mainView.initialize();
 
 function draw() {

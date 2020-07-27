@@ -1,6 +1,28 @@
 @import 'fonts';
 @import "grid";
 @import "footer";
+
+$green : #3A6361;
+$pink : #E8ACC8;
+$blue : #36588A;
+$yellow : #BC9249;
+$grey : #83838E;
+$maroon : #7A3C45;
+$ochre : #B86455;
+$beige : #AE867D;
+
+
+:root{
+  --color1 : #{$green}; //green
+  --color2 : #{$pink}; //pink
+  --color3 : #{$blue}; //blue
+  --color4 : #{$yellow}; //yellow
+  --color5 : #{$grey}; //grey
+  --color6 : #{$maroon}; //maroor
+  --color7 : #{$ochre}; //ochre
+  --color8 : #{$beige}; //beige
+}
+
 /* Hide scrollbar for Chrome, Safari and Opera */
 body::-webkit-scrollbar {
   display: none;
@@ -16,4 +38,12 @@ section{
   margin-left: 20px;
   margin-top:20px;
   position:relative;
+}
+
+canvas{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100vw;
+  height:100vh;
 }
