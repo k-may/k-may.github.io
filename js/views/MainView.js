@@ -49,6 +49,9 @@ export class MainView extends BaseView {
      */
     draw(time) {
 
+        this._state.update();
+        this._sectionsView.draw();
+
         if(this._bufferView)
             this._bufferView.draw()
     }

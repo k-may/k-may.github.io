@@ -15,15 +15,27 @@ export default class SectionsView{
             parentNode.appendChild(clone);
         }
 
+        this._currentSection = null;
+
         this._state.on('change:color', this._onChangeColor.bind(this));
+
     }
 
     //--------------------------
 
+    draw(){
+        if(this._currentSection)
+            this._currentSection.style.opacity = this._state.opacity;
+    }
+
     _onChangeColor(index){
 
         this._sections.forEach((section, i) => {
-            section.style.display = i == index ? "block" : "none";
+            //section.style.display = i == index ? "block" : "none";
+            if(i == index){
+                this._currentSection = section;
+            }
+            section.style.opacity = 0;
         });
 
     }

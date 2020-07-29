@@ -8,25 +8,36 @@ export default class State extends Emitter{
 
         this.PrimaryColor = null;
         this.SecondaryColor = null;
+        this.opacity = 0;
+        this.transition = 0;
+        this.duration = 1000;
 
-        this._loop();
-
+        this.update();
+        this._lastUpdate = Date.now();
     }
 
-    _loop(){
+    update(){
 
-        setTimeout(()=>{
+        var time = Date.now();
+        var elapsed = time - this._lastUpdate;
+
+        var ratio = Math.min(1,elapsed / this.duration);
+
+        this.transition = Math.max(0, (ratio - 0.5) / 0.5);
+        this.opacity = Math.min(1, ratio / 0.5);
+
+        if(elapsed > this.duration){
+            this.transition = 0;
+            this.opacity = 0;
             this._updateColor();
-            this._loop();
-
-        }, 1000);
+            this._lastUpdate = time;
+        }
 
     }
 
     _updateColor(){
 
         var colors = GLOBALS.Colors.map(color => color.clone());
-        //colors = colors.filter(color => color != this.SecondaryColor);
 
         var index = Math.floor(Math.random() * colors.length);
         this.PrimaryColor = this.SecondaryColor || colors.splice(index , 1).pop();
@@ -34,15 +45,13 @@ export default class State extends Emitter{
         var count = 0;
         do{
             index= Math.floor( Math.random() * colors.length);
-
             this.currentIndex !== undefined ? this.currentIndex : index;
-            
         }while(count ++ < 10 && this.currentIndex == index)
 
         this.SecondaryColor = colors.splice(index, 1).pop();
-        console.log(this.currentIndex, index);
         this.currentIndex = index;
         
-        this.trigger('change:color', index);
+        this.trigger('change:color', this.currentIndex);
+
     }
 }
