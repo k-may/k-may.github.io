@@ -24,8 +24,9 @@ export default class SectionsView{
     //--------------------------
 
     draw(){
-        if(this._currentSection)
-            this._currentSection.style.opacity = this._state.opacity;
+        if(this._currentSection) {
+            this._currentSection.style.opacity = Math.pow(this._state.opacity, 2);
+        }
     }
 
     _onChangeColor(index){

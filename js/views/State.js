@@ -21,10 +21,10 @@ export default class State extends Emitter{
         var time = Date.now();
         var elapsed = time - this._lastUpdate;
 
-        var ratio = Math.min(1,elapsed / this.duration);
+        var ratio = Math.min(1,elapsed / 1200);
 
-        this.transition = Math.max(0, (ratio - 0.5) / 0.5);
-        this.opacity = Math.min(1, ratio / 0.5);
+        this.transition = Math.max(0, (ratio - 0.6) / 0.4);
+        this.opacity = Math.min(1, ratio / 0.3);
 
         if(elapsed > this.duration){
             this.transition = 0;

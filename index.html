@@ -19,18 +19,28 @@
     <style>
         :root {
             --font: 100px;
-            --mobile : 1;
+            --mobile: 1;
             font-size: var(--font);
         }
 
-        @media screen and (min-width: 1310px){
+        @media screen and (min-width: 1310px) {
             :root {
                 --mobile: 0;
             }
         }
-        section{
-            --color : rgba(0,0,0,0);
-            color : var(--color);
+
+        section {
+            --color: rgba(0, 0, 0, 0);
+            color: var(--color);
+        }
+
+        .icon svg {
+            display:block;
+            fill: var(--color);
+        }
+
+        .icon{
+            display:block;
         }
 
     </style>
@@ -43,7 +53,7 @@
         <div class="grid_subtitle">Hello my name is</div>
         <div class="grid_title">KEV</div>
     </div>
-    <div class="text layout">
+    <!--<div class="text layout">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
             ut labore et dolore magna aliqua. Augue neque gravida in fermentum et sollicitudin ac. Eget nulla facilisi
             etiam dignissim diam. Nullam vehicula ipsum a arcu cursus vitae congue mauris. Ultrices tincidunt arcu non
@@ -59,16 +69,41 @@
             quis blandit turpis cursus. Sed nisi lacus sed viverra tellus in hac habitasse. In egestas erat imperdiet
             sed.
         </p>
-    </div>
-
+    </div>-->
+    <footer>
+        <div class="icons">
+            <a class='icon vimeo' href="https://vimeo.com/user97129125" target="_blank">
+                <svg version="1.2" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                     xmlns:xlink="http://www.w3.org/1999/xlink"
+                     x="0px" y="0px" viewBox="0 0 218 215" xml:space="preserve">
+<path d="M30.43,21.06h157.44L109.15,191.7L30.43,21.06z"/>
+</svg>
+            </a>
+            <a class='icon linked-in' href="https://www.linkedin.com/in/kev-mayo-47196410/" target="_blank">
+                <svg version="1.2" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                     xmlns:xlink="http://www.w3.org/1999/xlink"
+                     x="0px" y="0px" viewBox="0 0 218 215" xml:space="preserve">
+<path d="M172.75,147.42v42.48H45.55V22.86h8.88v124.56H172.75z"/>
+</svg>
+            </a>
+            <a class="icon medium" href="https://medium.com/@kevmayo" target="_blank">
+                <svg version="1.2" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                     xmlns:xlink="http://www.w3.org/1999/xlink"
+                     x="0px" y="0px" viewBox="0 0 218 215" xml:space="preserve">
+<path d="M41.71,22.86h9.6l58.32,103.2l58.08-103.2h8.88V189.9H41.71V22.86z M50.59,181.26h117.12V40.86l-54,95.04
+	h-8.4L50.59,39.42V181.26z"/>
+</svg>
+            </a>
+            <a href="mailto: kev@adventureclub.io" class="icon">
+                <svg version="1.2" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	 x="0px" y="0px" viewBox="0 0 218 215" xml:space="preserve">
+	<path d="M48.31,22.86h121.68V65.1h-78v21.12h64.8v40.08h-64.8v21.36h78v42.24H48.31V22.86z"/>
+</svg>
+            </a>
+        </div>
+    </footer>
 </section>
-<footer>
-    <div class="icons">
-        <a class='icon vimeo' href="https://vimeo.com/user97129125" target="_blank"></a>
-        <a class='icon linked-in' href="https://www.linkedin.com/in/kev-mayo-47196410/" target="_blank"></a>
-        <a class="icon medium" href="https://medium.com/@kevmayo" target="_blank"></a>
-    </div>
-</footer>
+
 
 <script type="module" crossorigin="anonymous" src="./js/main.js"></script>
 

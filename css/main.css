@@ -86,19 +86,12 @@ footer {
       footer .icons {
         flex-direction: row; } }
     footer .icons .icon {
-      width: 30px;
-      height: 30px;
-      background-color: black;
+      width: 20px;
+      height: 20px;
       cursor: pointer;
       margin-right: 15px;
       margin-bottom: 15px;
       background-size: contain; }
-    footer .icons .vimeo {
-      background-image: url("../assets/vimeo.png"); }
-    footer .icons .linked-in {
-      background-image: url("../assets/linked-in.png"); }
-    footer .icons .medium {
-      background-image: url("../assets/medium.png"); }
 
 :root {
   --color1: #3A6361;

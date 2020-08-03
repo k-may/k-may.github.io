@@ -1,6 +1,7 @@
 import {BaseView} from './BaseView.js';
 import {CanvasUtils} from '../utils/CanvasUtils.js';
 import {GLOBALS} from './MainView.js';
+import TWEEN from '../vendor/tween.esm.js';
 
 export default class BufferView extends BaseView{
 
@@ -34,10 +35,15 @@ export default class BufferView extends BaseView{
      //   this.buffer.fill(this.state.PrimaryColor.toRGBString());
         var ctx = this.buffer.ctx;
 
+        var out = function (k) {
+            return k === 1 ? 1 : 1 - Math.pow(2, -15 * k);
+        }
+
+        var ratio =  out(this.state.transition)
         var rect = {
-            x : (1 - this.state.transition) * this.buffer.width,
+            x : (1 - ratio) * this.buffer.width,
             y : 0,
-            w : this.state.transition * this.buffer.width,
+            w : ratio * this.buffer.width,
             h : this.buffer.height
         };
 
