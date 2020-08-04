@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="528f2aa4-ab3b-489b-964a-108007720a18" name="Default Changelist" comment="Merge branch 'develop' of https://github.com/k-may/k-may.github.io into develop&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/main.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/views/BufferView.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/views/BufferView.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/views/SectionsView.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/views/SectionsView.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/views/State.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/views/State.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scss/_footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/_footer.scss" afterDir="false" />
     </list>
@@ -115,7 +112,7 @@
       <workItem from="1596002715995" duration="3761000" />
       <workItem from="1596365623297" duration="803000" />
       <workItem from="1596443090032" duration="6000" />
-      <workItem from="1596463531059" duration="3477000" />
+      <workItem from="1596463531059" duration="5444000" />
     </task>
     <servers />
   </component>
@@ -211,14 +208,14 @@
       <screen x="1920" y="-344" width="2560" height="1400" />
     </state>
     <state width="2539" height="489" key="GridCell.Tab.3.right/0.0.1920.1040/1920.-344.2560.1400@1920.-344.2560.1400" timestamp="1596463849150" />
-    <state x="2906" y="89" width="587" height="534" key="find.popup" timestamp="1596006335379">
+    <state x="2906" y="89" width="587" height="534" key="find.popup" timestamp="1596532943264">
       <screen x="1920" y="-344" width="2560" height="1400" />
     </state>
-    <state x="2906" y="89" width="587" height="534" key="find.popup/0.0.1920.1040/1920.-344.2560.1400@1920.-344.2560.1400" timestamp="1596006335379" />
-    <state x="2355" y="-24" width="672" height="678" key="search.everywhere.popup" timestamp="1595841431115">
+    <state x="2906" y="89" width="587" height="534" key="find.popup/0.0.1920.1040/1920.-344.2560.1400@1920.-344.2560.1400" timestamp="1596532943264" />
+    <state x="2355" y="-24" width="672" height="678" key="search.everywhere.popup" timestamp="1596532935762">
       <screen x="1920" y="-344" width="2560" height="1400" />
     </state>
-    <state x="2355" y="-24" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.-344.2560.1400@1920.-344.2560.1400" timestamp="1595841431115" />
+    <state x="2355" y="-24" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.-344.2560.1400@1920.-344.2560.1400" timestamp="1596532935762" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

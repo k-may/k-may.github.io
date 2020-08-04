@@ -10,10 +10,10 @@ export default class State extends Emitter{
         this.SecondaryColor = null;
         this.opacity = 0;
         this.transition = 0;
-        this.duration = 1000;
+        this.duration = 2400;
 
-        this.update();
-        this._lastUpdate = Date.now();
+        this._updateColor();
+        this._lastUpdate = Date.now() - this.duration;
     }
 
     update(){
@@ -21,7 +21,7 @@ export default class State extends Emitter{
         var time = Date.now();
         var elapsed = time - this._lastUpdate;
 
-        var ratio = Math.min(1,elapsed / 1200);
+        var ratio = Math.min(1,elapsed / this.duration);
 
         this.transition = Math.max(0, (ratio - 0.6) / 0.4);
         this.opacity = Math.min(1, ratio / 0.3);

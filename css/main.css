@@ -73,18 +73,14 @@
 footer {
   position: fixed;
   bottom: 0;
-  right: 0; }
-  @media (min-width: 1310px) {
-    footer {
-      left: 0; } }
+  right: 0;
+  left: 0; }
   footer .icons {
     display: flex;
     margin-left: 45px;
     margin-top: 15px;
-    flex-direction: column; }
-    @media (min-width: 1310px) {
-      footer .icons {
-        flex-direction: row; } }
+    flex-direction: column;
+    flex-direction: row; }
     footer .icons .icon {
       width: 20px;
       height: 20px;

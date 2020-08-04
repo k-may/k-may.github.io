@@ -4,18 +4,18 @@ footer {
   bottom: 0;
   right:0;
 
-  @include respond-to('desktop'){
+ // @include respond-to('desktop'){
     left:0;
-  }
+ // }
 
   .icons{
     display:flex;
     margin-left:45px;
     margin-top: 15px;
     flex-direction: column;
-    @include respond-to('desktop'){
+  //  @include respond-to('desktop'){
       flex-direction: row;
-    }
+  //  }
 
     .icon {
       width: 20px;
