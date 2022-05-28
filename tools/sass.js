@@ -19,6 +19,9 @@ var renderSass = () => {
             console.log(err);
             return;
         }
+
+        console.log("sass : write css");
+
         fs.writeFile(outputFileName, result.css, function (err) {
             if (!err) {
                 //file written on disk

@@ -3,6 +3,7 @@ import {Color, ColorUtils} from '../utils/ColorUtils.js';
 import BufferView from './BufferView.js';
 import State from './State.js';
 import SectionsView from './SectionsView.js';
+import {BrowserUtils} from '../utils/BrowserUtils.js';
 
 export const GLOBALS = {
     Colors: []
@@ -12,8 +13,6 @@ export class MainView extends BaseView {
 
     constructor(el) {
         super(el);
-
-
     }
 
     //---------------------------------------------------
@@ -23,18 +22,14 @@ export class MainView extends BaseView {
      */
     initialize() {
 
-        this._cell = this.el.querySelector('.grid_cell');
-
-        var root = document.querySelector(':root');
-
-        GLOBALS.Colors.push(ColorUtils.HexToRgb(getComputedStyle(root).getPropertyValue('--color1')));
-        GLOBALS.Colors.push(ColorUtils.HexToRgb(getComputedStyle(root).getPropertyValue('--color2')));
-        GLOBALS.Colors.push(ColorUtils.HexToRgb(getComputedStyle(root).getPropertyValue('--color3')));
-        GLOBALS.Colors.push(ColorUtils.HexToRgb(getComputedStyle(root).getPropertyValue('--color4')));
-        GLOBALS.Colors.push(ColorUtils.HexToRgb(getComputedStyle(root).getPropertyValue('--color5')));
-        GLOBALS.Colors.push(ColorUtils.HexToRgb(getComputedStyle(root).getPropertyValue('--color6')));
-        GLOBALS.Colors.push(ColorUtils.HexToRgb(getComputedStyle(root).getPropertyValue('--color7')));
-        GLOBALS.Colors.push(ColorUtils.HexToRgb(getComputedStyle(root).getPropertyValue('--color8')));
+        GLOBALS.Colors.push(ColorUtils.HexToRgb(BrowserUtils.GetCSSVariable('--color1')));
+        GLOBALS.Colors.push(ColorUtils.HexToRgb(BrowserUtils.GetCSSVariable('--color2')));
+        GLOBALS.Colors.push(ColorUtils.HexToRgb(BrowserUtils.GetCSSVariable('--color3')));
+        GLOBALS.Colors.push(ColorUtils.HexToRgb(BrowserUtils.GetCSSVariable('--color4')));
+        GLOBALS.Colors.push(ColorUtils.HexToRgb(BrowserUtils.GetCSSVariable('--color5')));
+        GLOBALS.Colors.push(ColorUtils.HexToRgb(BrowserUtils.GetCSSVariable('--color6')));
+        GLOBALS.Colors.push(ColorUtils.HexToRgb(BrowserUtils.GetCSSVariable('--color7')));
+        GLOBALS.Colors.push(ColorUtils.HexToRgb(BrowserUtils.GetCSSVariable('--color8')));
 
         this._setupWindow();
         this._state = new State();
@@ -72,20 +67,6 @@ export class MainView extends BaseView {
     }
 
     _onResize() {
-
-        //var isMobile = document.documentElement.style.getProperty('--mobile');
-        var isMobile = getComputedStyle(document.querySelector(':root')).getPropertyValue('--mobile').indexOf('1') !== -1;
-        var gridWidth = this.el.clientWidth;
-        var gridHeight = this.el.clientHeight;
-
-        var cellWidth = this._cell.clientWidth;
-        var cellHeight = this._cell.clientHeight;
-        var dim = isMobile ? cellWidth : Math.max(cellWidth, cellHeight);
-
-        document.documentElement.style.setProperty('--font', `${dim}px`);
-
-        var numCols = Math.round(gridWidth / cellWidth);
-        var numRows = Math.round(gridHeight / cellHeight) - 1;
     }
 
     _onScroll() {

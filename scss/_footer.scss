@@ -1,21 +1,24 @@
+@import "mixins";
 
 footer {
   position: fixed;
   bottom: 0;
-  right:0;
+  right: 0;
+  left: 0;
 
- // @include respond-to('desktop'){
-    left:0;
- // }
-
-  .icons{
-    display:flex;
-    margin-left:45px;
+  .icons {
+    display: flex;
+    margin-left: 45px;
     margin-top: 15px;
-    flex-direction: column;
-  //  @include respond-to('desktop'){
-      flex-direction: row;
-  //  }
+    flex-direction: row;
+
+    @include see-tablet{
+      width:100%;
+      margin:0;
+      padding:0 var(--gutter);
+      justify-content: space-between;
+      box-sizing: border-box;
+    }
 
     .icon {
       width: 20px;
@@ -26,18 +29,18 @@ footer {
       background-size: contain;
     }
 
-    .vimeo{
+    .vimeo {
     }
 
-    .linked-in{
+    .linked-in {
     }
 
-    .medium{
+    .medium {
     }
 
-    .email{
+    .email {
 
     }
-    
+
   }
 }

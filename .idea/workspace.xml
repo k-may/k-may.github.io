@@ -2,11 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="528f2aa4-ab3b-489b-964a-108007720a18" name="Default Changelist" comment="Merge branch 'develop' of https://github.com/k-may/k-may.github.io into develop&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <change beforePath="$PROJECT_DIR$/.idea/k-may.github.io.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/k-may.github.io.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/main.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/views/BufferView.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/views/BufferView.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/views/State.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/views/State.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/utils/BrowserUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/utils/BrowserUtils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/views/MainView.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/views/MainView.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scss/_footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/_footer.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/_grid.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/_mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/_mixins.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/site.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/site.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/sass.js" beforeDir="false" afterPath="$PROJECT_DIR$/tools/sass.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,16 +48,18 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/js/vendor" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -79,6 +89,7 @@
       <item itemvalue="Node.js.sass" />
     </list>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -113,11 +124,12 @@
       <workItem from="1596365623297" duration="803000" />
       <workItem from="1596443090032" duration="6000" />
       <workItem from="1596463531059" duration="5444000" />
+      <workItem from="1653723154873" duration="4683000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -131,92 +143,6 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="2146" y="14" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595684408105">
-      <screen x="1920" y="-344" width="2560" height="1400" />
-    </state>
-    <state x="2146" y="14" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.-344.2560.1400@1920.-344.2560.1400" timestamp="1595684408105" />
-    <state width="779" height="466" key="DebuggerActiveHint" timestamp="1595686552005">
-      <screen x="1920" y="-344" width="2560" height="1400" />
-    </state>
-    <state width="779" height="466" key="DebuggerActiveHint/0.0.1920.1040/1920.-344.2560.1400@1920.-344.2560.1400" timestamp="1595686552005" />
-    <state x="2472" y="114" key="FileChooserDialogImpl" timestamp="1595685714747">
-      <screen x="1920" y="-344" width="2560" height="1400" />
-    </state>
-    <state x="2472" y="114" key="FileChooserDialogImpl/0.0.1920.1040/1920.-344.2560.1400@1920.-344.2560.1400" timestamp="1595685714747" />
-    <state width="2539" height="489" key="GridCell.Tab.0.bottom" timestamp="1596463849150">
-      <screen x="1920" y="-344" width="2560" height="1400" />
-    </state>
-    <state width="2539" height="489" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.-344.2560.1400@1920.-344.2560.1400" timestamp="1596463849150" />
-    <state width="2539" height="489" key="GridCell.Tab.0.center" timestamp="1596463849150">
-      <screen x="1920" y="-344" width="2560" height="1400" />
-    </state>
-    <state width="2539" height="489" key="GridCell.Tab.0.center/0.0.1920.1040/1920.-344.2560.1400@1920.-344.2560.1400" timestamp="1596463849150" />
-    <state width="2539" height="489" key="GridCell.Tab.0.left" timestamp="1596463849150">
-      <screen x="1920" y="-344" width="2560" height="1400" />
-    </state>
-    <state width="2539" height="489" key="GridCell.Tab.0.left/0.0.1920.1040/1920.-344.2560.1400@1920.-344.2560.1400" timestamp="1596463849150" />
-    <state width="2539" height="489" key="GridCell.Tab.0.right" timestamp="1596463849150">
-      <screen x="1920" y="-344" width="2560" height="1400" />
-    </state>
-    <state width="2539" height="489" key="GridCell.Tab.0.right/0.0.1920.1040/1920.-344.2560.1400@1920.-344.2560.1400" timestamp="1596463849150" />
-    <state width="2539" height="489" key="GridCell.Tab.1.bottom" timestamp="1596463849150">
-      <screen x="1920" y="-344" width="2560" height="1400" />
-    </state>
-    <state width="2539" height="489" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.-344.2560.1400@1920.-344.2560.1400" timestamp="1596463849150" />
-    <state width="2539" height="489" key="GridCell.Tab.1.center" timestamp="1596463849150">
-      <screen x="1920" y="-344" width="2560" height="1400" />
-    </state>
-    <state width="2539" height="489" key="GridCell.Tab.1.center/0.0.1920.1040/1920.-344.2560.1400@1920.-344.2560.1400" timestamp="1596463849150" />
-    <state width="2539" height="489" key="GridCell.Tab.1.left" timestamp="1596463849150">
-      <screen x="1920" y="-344" width="2560" height="1400" />
-    </state>
-    <state width="2539" height="489" key="GridCell.Tab.1.left/0.0.1920.1040/1920.-344.2560.1400@1920.-344.2560.1400" timestamp="1596463849150" />
-    <state width="2539" height="489" key="GridCell.Tab.1.right" timestamp="1596463849150">
-      <screen x="1920" y="-344" width="2560" height="1400" />
-    </state>
-    <state width="2539" height="489" key="GridCell.Tab.1.right/0.0.1920.1040/1920.-344.2560.1400@1920.-344.2560.1400" timestamp="1596463849150" />
-    <state width="2539" height="489" key="GridCell.Tab.2.bottom" timestamp="1596463849150">
-      <screen x="1920" y="-344" width="2560" height="1400" />
-    </state>
-    <state width="2539" height="489" key="GridCell.Tab.2.bottom/0.0.1920.1040/1920.-344.2560.1400@1920.-344.2560.1400" timestamp="1596463849150" />
-    <state width="2539" height="489" key="GridCell.Tab.2.center" timestamp="1596463849150">
-      <screen x="1920" y="-344" width="2560" height="1400" />
-    </state>
-    <state width="2539" height="489" key="GridCell.Tab.2.center/0.0.1920.1040/1920.-344.2560.1400@1920.-344.2560.1400" timestamp="1596463849150" />
-    <state width="2539" height="489" key="GridCell.Tab.2.left" timestamp="1596463849150">
-      <screen x="1920" y="-344" width="2560" height="1400" />
-    </state>
-    <state width="2539" height="489" key="GridCell.Tab.2.left/0.0.1920.1040/1920.-344.2560.1400@1920.-344.2560.1400" timestamp="1596463849150" />
-    <state width="2539" height="489" key="GridCell.Tab.2.right" timestamp="1596463849150">
-      <screen x="1920" y="-344" width="2560" height="1400" />
-    </state>
-    <state width="2539" height="489" key="GridCell.Tab.2.right/0.0.1920.1040/1920.-344.2560.1400@1920.-344.2560.1400" timestamp="1596463849150" />
-    <state width="2539" height="489" key="GridCell.Tab.3.bottom" timestamp="1596463849151">
-      <screen x="1920" y="-344" width="2560" height="1400" />
-    </state>
-    <state width="2539" height="489" key="GridCell.Tab.3.bottom/0.0.1920.1040/1920.-344.2560.1400@1920.-344.2560.1400" timestamp="1596463849151" />
-    <state width="2539" height="489" key="GridCell.Tab.3.center" timestamp="1596463849150">
-      <screen x="1920" y="-344" width="2560" height="1400" />
-    </state>
-    <state width="2539" height="489" key="GridCell.Tab.3.center/0.0.1920.1040/1920.-344.2560.1400@1920.-344.2560.1400" timestamp="1596463849150" />
-    <state width="2539" height="489" key="GridCell.Tab.3.left" timestamp="1596463849150">
-      <screen x="1920" y="-344" width="2560" height="1400" />
-    </state>
-    <state width="2539" height="489" key="GridCell.Tab.3.left/0.0.1920.1040/1920.-344.2560.1400@1920.-344.2560.1400" timestamp="1596463849150" />
-    <state width="2539" height="489" key="GridCell.Tab.3.right" timestamp="1596463849150">
-      <screen x="1920" y="-344" width="2560" height="1400" />
-    </state>
-    <state width="2539" height="489" key="GridCell.Tab.3.right/0.0.1920.1040/1920.-344.2560.1400@1920.-344.2560.1400" timestamp="1596463849150" />
-    <state x="2906" y="89" width="587" height="534" key="find.popup" timestamp="1596532943264">
-      <screen x="1920" y="-344" width="2560" height="1400" />
-    </state>
-    <state x="2906" y="89" width="587" height="534" key="find.popup/0.0.1920.1040/1920.-344.2560.1400@1920.-344.2560.1400" timestamp="1596532943264" />
-    <state x="2355" y="-24" width="672" height="678" key="search.everywhere.popup" timestamp="1596532935762">
-      <screen x="1920" y="-344" width="2560" height="1400" />
-    </state>
-    <state x="2355" y="-24" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.-344.2560.1400@1920.-344.2560.1400" timestamp="1596532935762" />
-  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -227,5 +153,9 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

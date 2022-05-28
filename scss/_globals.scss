@@ -1,0 +1,139 @@
+@import 'mixins';
+
+:root {
+  --mobile: 0;
+  --footer-height: 100px;
+  --page-height: calc(100vh - var(--footer-height));
+  --page-width: calc(100vw - var(--gutter) * 2);
+  --gutter: 20px;
+  --font: calc(var(--page-height) / 6);
+
+  @include see-tablet{
+    --gutter: 17px;
+    --mobile: 1;
+    --font: calc(1.2 * var(--page-width) / 6);
+  }
+  font-size: var(--font);
+
+  --color1: #{$green}; //green
+  --color2: #{$pink}; //pink
+  --color3: #{$blue}; //blue
+  --color4: #{$yellow}; //yellow
+  --color5: #{$grey}; //grey
+  --color6: #{$maroon}; //maroor
+  --color7: #{$ochre}; //ochre
+  --color8: #{$beige}; //beige
+
+
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+}
+
+section {
+  --color: rgba(0, 0, 0, 0);
+  color: var(--color);
+  opacity: 0;
+  width: 100%;
+  margin:0;
+  padding:0;
+  position: absolute;
+  z-index: 1;
+
+}
+
+canvas {
+  z-index: 0;
+  position: fixed;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.grid {
+
+  height: var(--page-height);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: grid;
+  padding:20px var(--gutter);
+
+  @include see-tablet{
+    padding:40px var(--gutter);
+  }
+  grid-template-rows: repeat(6, var(--font));
+  grid-template-columns: repeat(6, minmax(55px, 1fr));
+
+  .grid_cell {
+    grid-row: 1/1;
+    grid-column: 1/1;
+  }
+
+  .grid_subtitle {
+    font-family: 'major_mono_displayregular';
+    line-height: 1rem;
+    grid-row: 1/5;
+    grid-column: 1/6;
+    font-size: 1rem;
+    white-space: pre-line;
+  }
+
+  .grid_title {
+    font-family: 'major_mono_displayregular';
+    grid-row: -3/ -1;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    margin-left: -0.02em;
+  }
+
+}
+
+.text {
+  p {
+    max-width: 441px;
+    font-family: 'raleway';
+
+    font-size: 17px;
+
+    line-height: 31px;
+    letter-spacing: 1px;
+
+    grid-row: 1;
+    grid-column: 1/5;
+
+    @include respond-to('desktop') {
+      grid-row: 3/-1;
+      grid-column: -2/-5;
+      overflow-y: scroll;
+    }
+  }
+
+  p::-webkit-scrollbar {
+    display: none;
+  }
+
+}
+
+.icon {
+  display: block;
+
+  svg {
+    display: block;
+    fill: var(--color);
+  }
+}

@@ -36,4 +36,9 @@ export let BrowserUtils = {
     isIE() {
         return navigator.appName == 'Microsoft Internet Explorer' || (navigator.appName == 'Netscape' && navigator.appVersion.indexOf('Edge') > -1);
     },
+
+    GetCSSVariable(value, root){
+        root = root || document.querySelector(':root');
+        return getComputedStyle(root).getPropertyValue(value);
+    }
 };
